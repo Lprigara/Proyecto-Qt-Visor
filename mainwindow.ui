@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>733</width>
+    <width>711</width>
     <height>450</height>
    </rect>
   </property>
@@ -14,11 +14,37 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>711</width>
+     <height>0</height>
+    </size>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" colspan="3">
+    <item row="3" column="0">
+     <widget class="QPushButton" name="start">
+      <property name="text">
+       <string>Iniciar/Pausar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="stop">
+      <property name="text">
+       <string>Parar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="4">
      <widget class="QLabel" name="label">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -33,38 +59,24 @@
        <string/>
       </property>
       <property name="scaledContents">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="stop">
-      <property name="text">
-       <string>stop</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="exit">
-      <property name="text">
-       <string>Exit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="start">
-      <property name="text">
-       <string>start</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
+    <item row="3" column="3">
      <widget class="QCheckBox" name="autoinicio">
       <property name="text">
-       <string>autoinicio</string>
+       <string>Auto-inicio</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="exit">
+      <property name="text">
+       <string>Salir</string>
       </property>
      </widget>
     </item>
@@ -75,7 +87,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>733</width>
+     <width>711</width>
      <height>20</height>
     </rect>
    </property>
@@ -84,6 +96,7 @@
      <string>Archivo</string>
     </property>
     <addaction name="actionAbrir"/>
+    <addaction name="actionCapturar"/>
     <addaction name="actionSalir"/>
    </widget>
    <widget class="QMenu" name="menuAyuda">
@@ -92,7 +105,15 @@
     </property>
     <addaction name="actionAcerca_de"/>
    </widget>
+   <widget class="QMenu" name="menuAjustes">
+    <property name="title">
+     <string>Ajustes</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionPreferencias"/>
+   </widget>
    <addaction name="menuArchivo"/>
+   <addaction name="menuAjustes"/>
    <addaction name="menuAyuda"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -120,6 +141,16 @@
   <action name="actionAcerca_de">
    <property name="text">
     <string>Acerca de ...</string>
+   </property>
+  </action>
+  <action name="actionCapturar">
+   <property name="text">
+    <string>Capturar</string>
+   </property>
+  </action>
+  <action name="actionPreferencias">
+   <property name="text">
+    <string>Dispositivo de cámara</string>
    </property>
   </action>
  </widget>

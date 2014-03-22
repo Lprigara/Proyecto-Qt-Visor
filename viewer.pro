@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += multimedia multimediawidgets
+QT       += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,10 +16,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialog.cpp
+    preferencias.cpp \
+    capturebuffer.cpp \
+    acerca.cpp
 
 HEADERS  += mainwindow.h \
-    dialog.h
+    preferencias.h \
+    capturebuffer.h \
+    acerca.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui
+    preferencias.ui \
+    acerca.ui

@@ -3,6 +3,21 @@
 
 #include <QMainWindow>
 #include <QSettings>
+#include <QCamera>
+#include <QCameraViewfinder>
+#include <QtWidgets>
+
+#include <QByteArray>
+#include <QPainter>
+#include <QTime>
+
+#include <QString>
+
+#include "preferencias.h"
+#include "capturebuffer.h"
+
+#include <QTcpSocket>
+
 
 namespace Ui {
 class MainWindow;
@@ -33,10 +48,22 @@ private slots:
 
     //void showFrame(const QRect& rect);
 
+    void on_actionCapturar_triggered();
+
+    void on_actionPreferencias_triggered();
+
+    void image1(QImage image); //Slot para modificar los frames
+
 private:
-    Ui::MainWindow *ui;
-    QMovie *movie;
-    QSettings *settings;
+    Ui::MainWindow *ui_;
+    QMovie *movie_;
+    QSettings *setting_;
+    QCamera *camera_;
+    QCameraViewfinder *viewfinder_;
+    QByteArray dispdefault_;
+    QByteArray dispchoise_;
+    captureBuffer *captureB_;
+    QList<QByteArray> devices_;
 };
 
 #endif // MAINWINDOW_H
